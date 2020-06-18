@@ -1,0 +1,19 @@
+extends layout
+ 
+block variables
+  - var title = "Dashboard"
+ 
+block content
+  h2.text-center Welcome #{desc.name}! #{userinfo}
+ 
+  .row
+    .offset-sm-2.col-sm-8
+      .jumbotron.text-center
+        p.
+          Last login: #{userdetail.lastLogin}
+        table.table.table-striped
+          each val, item in desc
+            tr
+              td
+                strong= item
+              td= val
